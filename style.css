@@ -1,0 +1,129 @@
+body
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 12px;
+}
+
+#tweet
+{
+	display: block;
+	max-width: 500px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 13px;
+	text-align: left;
+	position: relative;
+	line-height: 16px;
+	padding: 0;
+	height: 55px;
+	margin: 0px;
+}
+.userpic
+{
+	display: block;
+	height: 50px;
+	left: 0px;
+	margin: 0px 0 0px 0;
+	overflow: hidden;
+	position: absolute;
+	width: 50px;
+}
+
+#tweet .tweetinfo 
+{
+	position: relative;
+	width: 425px;
+	padding-left: 60px;
+	right: 0px;
+}
+
+#tweet #username
+{
+	overflow: visible;
+	font-weight: bold;
+	display: inline;
+	min-height: 48px;
+	padding: 0;
+	color: #1a7563;
+}
+
+#username:hover
+{
+	border-bottom: 1px dashed #1a7563;
+	cursor: pointer;
+}
+
+#tweet #tweettext
+{
+	overflow: visible;
+	display: inline;
+	margin-left: 6px;
+	padding-left: 60px;
+	min-height: 48px;
+	padding: 0;
+	color: #73616d;
+}
+
+#tweet #tweetdate
+{
+	color: #aeafb1;
+	font-size: 11px;
+}
+
+#tweet_notification {
+	background-color: #FFF;
+	border-radius: 5px;
+	line-height: 15px;
+	min-height: 60px;
+	font-size: 12px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+#tweet_notification .userpic
+{
+	margin: 5px 0 0 3px;
+}
+
+#tweet_notification .tweetinfo 
+{
+	position: relative;
+	width: 225px;
+	min-height: 50px;
+	padding-left: 50px;
+	margin-left: 10px;
+	right: 0px;
+	top: 0px;
+	text-align: left;
+}
+
+#tweet_notification #username
+{
+	overflow: visible;
+	font-weight: bold;
+	display: inline;
+	min-height: 48px;
+	padding: 0;
+	color: #1a7563;
+	text-decoration: none;
+	font-size: 13px;
+}
+
+#tweet_notification #username a
+{
+	text-decoration: none;
+}
+
+#tweet_notification #username a:visited
+{
+	color: #1a7563;
+}
+
+#tweet_notification #tweettext
+{
+	overflow: visible;
+	display: inline;
+	margin-left: 6px;
+	padding-left: 60px;
+	min-height: 48px;
+	padding: 0;
+	color: #51404a;
+}

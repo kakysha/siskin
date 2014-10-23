@@ -1,0 +1,30 @@
+{
+  "name": "Siskin for Twitter",
+  "version": "1.3.3",
+
+  "description": "An extremly simple and pretty adequate extension to fetch the last tweet from your timeline in Twitter and pop-up it.",
+  "icons": { 
+		   "16": "icons/icon16.png",
+           "48": "icons/icon48.png",
+		   "128": "icons/icon128.png",
+           "64": "icons/icon64.png" },
+
+  "browser_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "Siskin",      
+	"default_popup": "popup.html"
+  },
+
+  "background_page": "background.html",
+  "options_page": "options.html",
+  "permissions": [
+	  "tabs","notifications",
+	  "http://*/*", "https://*/*"
+   ],
+   "content_scripts": [
+    {
+      "matches": ["http://api.twitter.com/oauth/authorize", "https://api.twitter.com/oauth/authorize"],
+      "js": ["pin_grabber.js"]
+    }
+  ]
+}

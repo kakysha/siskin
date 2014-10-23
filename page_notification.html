@@ -1,0 +1,17 @@
+chrome.extension.sendRequest({action: "_GetLastTweetInfo"}, function(response) {
+	RenderTweet(response);
+});
+
+function RenderTweet(tweet)
+{
+	var divTag = document.createElement("div");
+	divTag.id = "tweet_notification";
+	divTag.onclick = function() {this.style.display = "none";}
+	divTag.style.position = "fixed";
+	divTag.style.top = "5px";
+	divTag.style["z-index"] = "9999";
+	divTag.style.right = "10px";
+	divTag.innerHTML = '<div class="userpic"><img id="userpic" src="'+tweet.image+'" width=50 height=50 /></div><div class="tweetinfo"><div id="username"><a href="http://twitter.com/'+tweet.name+'" target="_blank">'+tweet.name+'</a></div><div id="tweettext">'+tweet.text+'</div></div>';
+	document.body.appendChild(divTag);
+	setTimeout('document.body.removeChild(document.getElementById("tweet_notification"))', tweet.notificationTime * 1000);
+}

@@ -1,0 +1,34 @@
+<html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css" /> 
+<script type="text/javascript" src="libs/timeago.js"></script>
+<script>
+var BG = chrome.extension.getBackgroundPage();
+function Init()
+{
+	var tweet = BG._GetLastTweetInfo();
+	
+	var tweetdate = timeAgo(new Date().getTime(), tweet.date, 4);
+
+	document.getElementById("userpic").src = tweet.image;
+	document.getElementById("username").innerHTML = '<a onclick="chrome.tabs.create({url: \'http://twitter.com/'+tweet.name+'\', selected: true})">'+tweet.name+'</a>';
+	document.getElementById("tweettext").innerHTML = tweet.text;
+	document.getElementById("tweetdate").innerHTML = tweetdate;
+}
+</script>
+</head>
+
+<body onload="Init()">
+<div id="tweet">
+	<div class="userpic">
+		<img id="userpic" src="" width=50 height=50 />
+	</div>
+	<div class="tweetinfo">
+		<div id="username"> </div>
+		<div id="tweettext"> </div>
+		<div id="tweetdate"> </div>
+	</div>
+</div>
+
+</body>
+</html>

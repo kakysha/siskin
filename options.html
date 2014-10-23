@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Siskin Options</title>
+
+<style>
+body
+{ 
+	background-color: #FFF; 
+	font-family: 'georgia', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: #FFF;
+}
+
+label
+{ 
+	display: block; 
+	padding: 4px; 
+	font-weight: bold;
+	border:0 0 1px 0;
+}
+
+label.ctrl
+{ 
+	margin-left: 20px;
+	display: block; 
+	vertical-align: middle;
+	font-weight: normal;
+}
+
+#siskin {
+	position: absolute;
+	top: 6px;
+	right: 6px;
+}
+
+#message
+{
+	color: #FFF;
+	display: none;
+	margin-bottom: 20px;
+}
+
+a, a:visited, a:hover
+{ 
+	color: #C0DEED;
+	text-decoration: none;
+}
+
+div.menu
+{
+	width: 700px;
+	background: #70adcc;
+	padding: 7px;
+	margin-left: auto;
+	margin-right: auto;	
+	margin-bottom: 20px;
+	-webkit-border-radius: 7px;
+	-webkit-box-shadow: 0px 0px 5px #8EC2EB;
+}
+
+div.buttons
+{
+	text-align: center;
+}
+
+div.buttons input[type=button]
+{
+	width: 140px;
+}
+
+#heading {
+	position: relative;
+	padding-left: 10px;
+	border-radius: 6px;
+	color: #FFF;
+	background: #4F81A2 url(/images/headergradient.png) repeat-x 0% 0%;
+}
+#heading img{
+	position: absolute;
+	right: 0px;
+}
+#heading h1 {
+	font-size: 28px;
+}
+#heading h2 {
+	color: #C0DEED;
+	font-size: 13px;
+}
+#heading p {
+	margin-left: -10px;
+	padding-left: 10px;
+	padding-top: 10px;
+	height: 30px;
+	width: 706px;
+	background: #4F81A2 url(/images/headergradient.png) repeat-x 0% 0%;
+	font-size: 19px;
+	text-align: center;
+}
+
+.slider {
+	background-image: url(/images/slider_bg.gif);
+	background-repeat: repeat-x;	
+	float: left;
+	margin-right: 20px;
+}
+.knob {
+	position: relative;
+	background-image: url(/images/slider.gif);
+	background-repeat: no-repeat;	
+}
+#volume {
+	display: inline;
+}
+</style>
+</head>
+
+<body onload="init_options();">
+
+<div class="menu" id="heading">
+	<img src="/images/clouds.png" class="clouds">
+	<img id="siskin" src="/icons/icon128.png" />
+	<h1>Siskin Extension</h1>
+	<h2>By Mikhail Pustovalov [<a href="mailto:siskin.extension@gmail.com">siskin.extension@gmail.com</a>] [<a href="http://siskin.tumblr.com">siskin.tumblr.com</a>]</h2>
+	<p>Options</p>
+</div>
+
+	<div class="menu">
+		<label><span>Pop-up style:</span></label>
+		<label class="ctrl"><input type="radio" id="sitePopUp" name="previewSize"/><span>On-site pop-up</span><img style="margin-left: 45px;width: 200px;" valign="middle" src="/images/page.png"/> <a href="#" onClick="ExamplePage()">Example</a></label>
+		<label class="ctrl"><input type="radio" id="desktopPopUp" name="previewSize"/><span>Desktop pop-up</span><img style="margin-left: 40px;width: 200px;" valign="middle" src="/images/desktop.png" /> <a href="#" onClick="ExampleDesktop()">Example</a></label>
+	</div>
+	
+	
+	<div class="menu">
+		<label><span>Timeline checking interval:</span></label>
+		<label class="ctrl"><input type="radio" id="timeout12" name="checkInterval"/><span>12 seconds</span></label>
+		<label class="ctrl"><input type="radio" id="timeout30" name="checkInterval"/><span>30 seconds</span></label>
+		<label class="ctrl"><input type="radio" id="timeout60" name="checkInterval"/><span>1 minute</span></label>
+		<label class="ctrl"><input type="radio" id="timeout300" name="checkInterval"/><span>5 minutes</span></label>
+	</div>
+	
+	
+	<div class="menu">
+		<label><span>Notification display timeOut:</span></label>
+		<label class="ctrl"><input type="radio" id="notification1" name="notification"/><span>1 second</span></label>
+		<label class="ctrl"><input type="radio" id="notification3" name="notification"/><span>3 seconds</span></label>
+		<label class="ctrl"><input type="radio" id="notification5" name="notification"/><span>5 seconds</span></label>
+		<label class="ctrl"><input type="radio" id="notification8" name="notification"/><span>8 seconds</span></label>
+		<label class="ctrl"><input type="radio" id="notification10" name="notification"/><span>10 seconds</span></label>
+	</div>
+	
+	<div class="menu">
+		<label><span>Notification sound volume:</span><audio id="sound" src="/images/notify.mp3"></audio></label>
+		<label class="ctrl"><div id="sl"></div>Volume: <div id="volume"></div></label>
+	</div>
+	
+	<div class="menu" id="message">
+		<label>Settings saved</label>
+	</div>
+	
+	<div class="menu">
+		<div class="buttons">
+			<input type="button" id="save" value="Save" onclick="return onSave();"/>
+		</div>
+		
+	</div>
+	
+	<input type="button" id="login" align="left" value="" onclick=""/>
+	<br/>
+	<script type="text/javascript" src="options.js"></script>
+</body>
+</html>
